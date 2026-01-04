@@ -781,8 +781,15 @@ p {
   color: var(--color-text-muted);
 }
 
-.schedule-table .saturday {
-  color: var(--color-primary);
+/* 土曜日 - ヘッダー（青背景）は白文字 */
+.schedule-table thead .saturday {
+  color: white;
+}
+
+/* 土曜日 - ボディは青文字 */
+.schedule-table tbody .saturday {
+  color: #1565C0;
+  font-weight: 600;
 }
 
 .schedule-table .sunday {
@@ -1603,14 +1610,33 @@ p {
     font-size: var(--font-size-base);
   }
 
-  /* Schedule Table - make scrollable */
+  /* Schedule Table - fit to screen */
   .schedule-table-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: visible;
+    margin: 0;
+    padding: 0;
   }
 
   .schedule-table {
-    min-width: 500px;
+    width: 100%;
+    table-layout: fixed;
+    font-size: 12px;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 6px 2px;
+    word-break: keep-all;
+  }
+
+  .schedule-table th:first-child,
+  .schedule-table td:first-child {
+    width: 65px;
+    font-size: 11px;
+  }
+
+  .schedule-table small {
+    font-size: 9px;
   }
 
   /* Symptom cards single column */
