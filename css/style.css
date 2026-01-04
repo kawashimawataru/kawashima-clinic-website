@@ -1393,7 +1393,8 @@ p {
   }
 
   .two-column {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
     gap: var(--space-8);
   }
 
